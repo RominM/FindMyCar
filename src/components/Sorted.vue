@@ -16,24 +16,39 @@
     props: {
       cars: Object,
     },
+    data(){
+      return {
+        cars:{},
+      };
+    },
     methods: {
       handleSorted() {
         const value = document.querySelector('#sorted').value;
 
         switch(value){
           case "Name":
-            this.cars.sort((a,b) => {
+            const sortName = this.cars.sort((a,b) => {
               return a.Name - b.Name
             })
+            this.cars = sortName;
             break
           case "HorsePower":
-            alert('is HorsePower')
+            const sortHorse = this.cars.sort((a,b) => {
+              return a.Horsepower - b.Horsepower
+            })
+            this.cars = sortHorse;
             break
           case "Cylinder":
-            alert('is Cylinder')
+            const sortCylinder = this.cars.sort((a,b) => {
+              return a.Cylinder - b.Cylinder
+            })
+            this.cars = sortCylinder;
             break
           case "Country":
-            alert('is Country');
+            const sortCountry = this.cars.sort((a,b) => {
+              return a.Country - b.Country
+            })
+            this.cars = sortCountry;
             break
         }
       }

@@ -3,6 +3,7 @@
     <div v-for="(car, Index) in cars" :key="Index">
       <router-link :to="`/car-details/${car.Name}`" class="car">  
         <li title="Click for more details">
+          <img src="./../assets/car-unique.png" alt="car unique example">
           <p>
             {{car.Name.charAt(0).toUpperCase() + car.Name.slice(1)}}
           </p>
@@ -25,14 +26,15 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 100%;
+    width: 90%;
     padding: 50px;
+    margin: auto;
   }
 
   li{
     display: table;
-    width: 320px;
-    height: 100px;
+    width: 350px;
+    height: 120px;
     margin: 25px auto;
     border: solid;
     border-radius: 10px;
@@ -47,7 +49,14 @@
     background-color: hsla(160, 100%, 37%, 0.2);
   }
   p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     text-align:center; 
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
     vertical-align: middle;
     display: table-cell;
     max-width: 90%;
