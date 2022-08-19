@@ -5,6 +5,7 @@
       <option value="Name">Name</option>
       <option value="HorsePower">HorsePower</option>
       <option value="Cylinder">Cynlinder</option>
+      <option value="Country">Country</option>
     </select>
     <button @click="handleSorted" id="btn">Sorted</button>
   </div>
@@ -21,17 +22,18 @@
 
         switch(value){
           case "Name":
-            console.log(this.cars);
             this.cars.sort((a,b) => {
               return a.Name - b.Name
             })
-              console.log(this.cars.Name);
             break
           case "HorsePower":
             alert('is HorsePower')
             break
           case "Cylinder":
             alert('is Cylinder')
+            break
+          case "Country":
+            alert('is Country');
             break
         }
       }

@@ -1,12 +1,13 @@
 <template>
   <div class="car-details">
     <h1>Car details</h1>
-    <router-link to="/">Go back Home</router-link>
+    <router-link to="/">&lt&lt&nbsp Go back Home</router-link>
   </div>
-  <main>
-    <h2 class="name-car">{{ $route.params.id.toUpperCase() }}</h2>
-    <div>{{ car }}</div>
-  </main>
+    <main>{{ getCar($route.params.id) }}
+      <div>{{this.car.Name}}</div>
+      <div>{{this.car.Horsepower}}</div>
+      <div>{{this.car.Acceleration}}</div>
+    </main>
 </template>
 
 <script>
@@ -14,16 +15,18 @@
     props: {
       cars: Object,
     },
-    getCar() {
-      return cars.find(car => car.Name === this.url_data);
-    },
-    mounted(){
-      this.url_data=this.$route.params.id;
-    },
     data(){
-      return{
-        url_data: null
+      return {
+        car:{},
       };
+    },
+    methods: {
+      getCar(name) {
+        const infoCar = this.cars.forEach((car) => {
+          car.Name === name && (this.car = car);
+        });
+        return infoCar
+      }
     }
   };
 </script>
@@ -33,5 +36,11 @@
     text-align: center;
     font-size: 3rem;
     font-weight: bold;
+  }
+  a{
+    border-bottom: transparent 1px;
+  }
+  a:hover {
+    border-bottom: solid 1px;
   }
 </style>

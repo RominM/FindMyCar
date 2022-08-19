@@ -8,7 +8,7 @@
         cars: []
       }
     },
-    mounted() {
+    created() {
       setTimeout(() => {
         this.loading = true;
       fetch(CARS_URL)
@@ -20,28 +20,6 @@
     }
   }
 </script>
-
-<!-- <script>
-export default {
-  data() {
-    return {
-      loading: false,
-      todo: ''
-    };
-  },
-  async created () {
-    this.loading = true
-    try {
-      const res = await fetch('https://jsonplaceholder.typicode.com/todos/1')
-      this.todo = await res.json()
-      this.loading = false
-    } catch (error) {
-      console.log(error)
-      this.loading = false
-    }
-  }
-};
-</script> -->
 
 <template>
   <div v-if="loading" class="loader">
