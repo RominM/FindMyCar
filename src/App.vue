@@ -23,17 +23,17 @@
 
 <template>
   <div v-if="loading" class="loader">
-  <div class="progress_bar animate-loader">
-  <div class="content">
-    <div class="wrapper">
-      <div class="viewer">
-        <div class="shimmer"></div>
+    <div class="progress_bar animate-loader">
+      <div class="content">
+        <div class="wrapper">
+          <div class="viewer">
+            <div class="shimmer"></div>
+          </div>
+        </div>
+        <div class="state" data-start="Sending Request" data-middle="Validating" data-end="Almost there!"></div>
       </div>
     </div>
-    <div class="state" data-start="Sending Request" data-middle="Validating" data-end="Almost there!"></div>
   </div>
-</div>
-</div>
   <router-view :cars="cars"></router-view>
 </template>
 

@@ -5,7 +5,7 @@
   </div>
     <main>{{ getCar($route.params.id) }}
       <h2 class="name-car">{{ this.car.Name }}</h2>
-      <div class="origin">Design from <span>{{this.car.Origin}}</span> in {{this.car.Year}}</div>
+      <div class="origin">Design from <span>{{this.car.Origin}}</span> in {{getYear(this.car.Year)}}</div>
       <img src="./../assets/car-example.png" alt="car example">
       <div class="more">
         <div class="power">
@@ -47,6 +47,9 @@
           car.Name === name && (this.car = car);
         });
         return infoCar
+      },
+      getYear(date) {
+        return date.substring(0,4);
       }
     }
   };

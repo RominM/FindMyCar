@@ -14,12 +14,7 @@
 
 <template>
   <div class="home">
-    <!-- <div class="content"> -->
-
       <h1>Welcome to our Garage</h1>
-    <!-- </div> -->
-    <!-- <img src="./../assets/cars-garage.png" alt="car presentation"> -->
-    <!-- <div class="content"> -->
       <h2>Find your car</h2>
       <Sorted :cars="cars"/>
       <main class="cars">

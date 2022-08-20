@@ -3,7 +3,7 @@
     <label for="sorted">Sorted by</label>
     <select name="sorted" id="sorted">
       <option value="Name">Name</option>
-      <option value="HorsePower">HorsePower</option>
+      <option value="Horsepower">HorsePower</option>
       <option value="Cylinder">Cynlinder</option>
       <option value="Country">Country</option>
     </select>
@@ -16,39 +16,25 @@
     props: {
       cars: Object,
     },
-    data(){
-      return {
-        cars:{},
-      };
-    },
-    methods: {
+    computed: {
       handleSorted() {
         const value = document.querySelector('#sorted').value;
-
         switch(value){
           case "Name":
-            const sortName = this.cars.sort((a,b) => {
-              return a.Name - b.Name
-            })
-            this.cars = sortName;
+            console.log('Name');
+            this.cars.sort((a,b) => a.Name < b.Name ? -1 : 1)
             break
-          case "HorsePower":
-            const sortHorse = this.cars.sort((a,b) => {
-              return a.Horsepower - b.Horsepower
-            })
-            this.cars = sortHorse;
+          case "HorsepSower":
+            console.log('Horsepower');
+            this.cars.sort((a,b) => a.Horsepower < b.Horsepower ? -1 : 1)
             break
           case "Cylinder":
-            const sortCylinder = this.cars.sort((a,b) => {
-              return a.Cylinder - b.Cylinder
-            })
-            this.cars = sortCylinder;
+            console.log('Cylinder');
+            this.cars.sort((a,b) => a.Cylinder < b.Cylinder ? -1 : 1)
             break
           case "Country":
-            const sortCountry = this.cars.sort((a,b) => {
-              return a.Country - b.Country
-            })
-            this.cars = sortCountry;
+            console.log('Country');
+            this.cars.sort((a,b) => a.Country < b.Country ? -1 : 1)
             break
         }
       }
