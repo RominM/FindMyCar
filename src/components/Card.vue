@@ -1,15 +1,15 @@
 <template>
   <ul class="cars-list">
-    <div v-for="(car, Index) in cars" :key="Index">
-      <router-link :to="`/car-details/${car.Name}`" class="car">  
-        <li title="Click for more details">
+    <li title="Click for more details" v-for="(car, Index) in cars" :key="Index">
+      <router-link :to="`/car-details/${car.Name}`">  
+        <div>
           <img src="./../assets/images/car-unique.png" alt="car unique example">
           <p>
             {{car.Name.charAt(0).toUpperCase() + car.Name.slice(1)}}
           </p>
-        </li>
+        </div>
       </router-link>
-    </div>
+    </li>
   </ul>
 </template>
 
