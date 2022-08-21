@@ -14,13 +14,12 @@
 
 <template>
   <div class="home">
-      <h1>Welcome to our Garage</h1>
-      <h2>Find your car</h2>
-      <Sorted :cars="cars"/>
-      <main class="cars">
+    <h1>Welcome to our Garage</h1>
+    <h2>Find your car</h2>
+    <Sorted :cars="cars"/>
+    <main class="cars">
       <Card :cars="cars"/>
-      </main>
-    <!-- </div> -->
+    </main>
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <script>
-  import CARS_URL from './model/url';
+  import CARS_URL from './fetchUrl/url';
 
   export default {
     data(){

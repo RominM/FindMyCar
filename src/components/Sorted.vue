@@ -10,7 +10,7 @@
 
       <option value="Country">Country</option>
     </select>
-    <button @click="handleSorted" id="btn">Sorted</button>
+    <button @click="handleSorted" type="button">Sorted</button>
   </div>
 </template>
 
@@ -41,7 +41,7 @@
           case "Country":
             this.cars.sort((a,b) => a.Origin < b.Origin ?  -1 : 1)
             break
-        }
+        };
       }
     }
   }

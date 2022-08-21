@@ -1,6 +1,6 @@
 <template>
   <div class="error-content">  
-    <div class="error">
+    <div>
       <h1 class="title">Error 404</h1>
       <router-link to="/">&lt&lt&nbsp Go back Home</router-link>
     </div>
