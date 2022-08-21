@@ -1,3 +1,3 @@
-const CARS_URL = './../../public/data/cars.json';
+const CARS_URL = './data/cars.json';
 
 export default CARS_URL
