@@ -3,8 +3,11 @@
     <label for="sorted">Sorted by</label>
     <select name="sorted" id="sorted">
       <option value="Name">Name</option>
-      <option value="Horsepower">HorsePower</option>
-      <option value="Cylinder">Cynlinder</option>
+      <option value="HorsepowerUp">HorsePower: Low to High</option>
+      <option value="HorsepowerDown">HorsePower: High to Low</option>
+      <option value="CylindersUp">Cylinders: Low to High</option>
+      <option value="CylindersDown">Cylinders: High to Low</option>
+
       <option value="Country">Country</option>
     </select>
     <button @click="handleSorted" id="btn">Sorted</button>
@@ -18,23 +21,25 @@
     },
     computed: {
       handleSorted() {
-        const value = document.querySelector('#sorted').value;
-        switch(value){
+        const selectValue = document.querySelector('#sorted').value;
+        switch(selectValue){
           case "Name":
-            console.log('Name');
-            this.cars.sort((a,b) => a.Name < b.Name ? -1 : 1)
+            this.cars.sort((a,b) => a.Name < b.Name ? -1 : 1);
             break
-          case "HorsepSower":
-            console.log('Horsepower');
+          case "HorsepowerUp":
             this.cars.sort((a,b) => a.Horsepower < b.Horsepower ? -1 : 1)
             break
-          case "Cylinder":
-            console.log('Cylinder');
-            this.cars.sort((a,b) => a.Cylinder < b.Cylinder ? -1 : 1)
+          case "HorsepowerDown":
+            this.cars.sort((a,b) => a.Horsepower > b.Horsepower ? -1 : 1)
+            break
+          case "CylindersUp":
+            this.cars.sort((a,b) => a.Cylinders > b.Cylinders ? -1 : 1)
+            break
+          case "CylindersDown":
+            this.cars.sort((a,b) => a.Cylinders < b.Cylinders ? -1 : 1)
             break
           case "Country":
-            console.log('Country');
-            this.cars.sort((a,b) => a.Country < b.Country ? -1 : 1)
+            this.cars.sort((a,b) => a.Origin < b.Origin ?  -1 : 1)
             break
         }
       }

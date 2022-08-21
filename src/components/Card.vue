@@ -3,7 +3,7 @@
     <div v-for="(car, Index) in cars" :key="Index">
       <router-link :to="`/car-details/${car.Name}`" class="car">  
         <li title="Click for more details">
-          <img src="./../assets/car-unique.png" alt="car unique example">
+          <img src="./../assets/images/car-unique.png" alt="car unique example">
           <p>
             {{car.Name.charAt(0).toUpperCase() + car.Name.slice(1)}}
           </p>

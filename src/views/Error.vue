@@ -4,7 +4,7 @@
       <h1 class="title">Error 404</h1>
       <router-link to="/">&lt&lt&nbsp Go back Home</router-link>
     </div>
-    <img src="./../assets/pneu-error1.png" alt="pneu error" class="img-error">
+    <img src="./../assets/images/pneu-error1.png" alt="pneu error" class="img-error">
     <br>
     <span class="not-found">Not found</span>
   </div>

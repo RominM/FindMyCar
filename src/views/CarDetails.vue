@@ -1,23 +1,30 @@
 <template>
   <div class="car-details">
-    <h1 class="title">{{ this.car.Name }}</h1>
+    <h1 class="title" v-if="this.car.Name">{{ this.car.Name }}</h1>
     <router-link to="/">&lt&lt&nbsp Go back Home</router-link>
   </div>
     <main>{{ getCar($route.params.id) }}
-      <h2 class="name-car">{{ this.car.Name }}</h2>
-      <div class="origin">Design from <span>{{this.car.Origin}}</span> in {{getYear(this.car.Year)}}</div>
-      <img src="./../assets/car-example.png" alt="car example">
+      <h2 class="name-car" v-if="this.car.Name">{{ this.car.Name }}</h2>
+      <div class="origin">Design from <span>{{this.car.Origin}}</span> in <span v-if="this.car.Year">{{getYear(this.car.Year)}}</span></div>
+      <img src="./../assets/images/car-example.png" alt="car example">
       <div class="more">
         <div class="power">
           <h3>Power :</h3>
-          <div>{{this.car.Horsepower}} horsepower for {{this.car.Cylinders}} cylinders</div>
+          <div>
+            <div v-if="this.car.Horsepower">
+              {{this.car.Horsepower}} horsepower for 
+            </div>
+            <div v-if="this.car.Cylinders">
+              {{this.car.Cylinders}} cylinders
+            </div>
+          </div>
         </div>
         <div class="details">
           <h3>Details : </h3>
-          <div>Acceleration : {{this.car.Acceleration}}</div>
-          <div>Displacement : {{this.car.Displacement}}</div>
-          <div>Miles per Gallon : {{this.car.Miles_per_Gallon}}</div>
-          <div>Weight : {{this.car.Weight_in_lbs}}lbs</div>
+          <div v-if="this.car.Acceleration">0-100km/h in {{this.car.Acceleration}}s</div>
+          <div v-if="this.car.Miles_per_Gallon">{{this.car.Miles_per_Gallon}} Miles per Gallon</div>
+          <div v-if="this.car.Displacement">Displacement : {{this.car.Displacement}} Cc</div>
+          <div v-if="this.car.Weight_in_lbs">Weight : {{this.car.Weight_in_lbs}}lbs</div>
         </div>
       </div>
       <hr>
